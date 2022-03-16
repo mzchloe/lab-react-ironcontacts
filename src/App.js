@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { useState } from "react";
+import contacts from "./contacts.json";
 
 function App() {
+  const [contact] = useState(contacts.splice(0,5));
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>IronContacts</h1>
+      <table>
+        <tr>
+          <th>Picture</th>
+          <th>Name</th>
+          <th>Popularity</th>
+        </tr>
+
+        {contact.map((element) => {
+          let displayPopularity = (element.popularity).toFixed(2)
+
+          return (
+            <tr>
+              <th><img src={element.pictureUrl} alt={element.pictureUrl}/></th>
+              <th>{element.name}</th>
+              <th>{displayPopularity}</th>
+            </tr>
+          );
+        })}
+      </table>
     </div>
   );
 }
