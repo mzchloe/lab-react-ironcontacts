@@ -23,16 +23,16 @@ function App() {
     return setContact(list)
   }
 
- /*  const sortName = () => {
-
-  } */
+  /*  const sortName = () => {
+  
+    } */
 
   return (
     <div className="App">
       <h1>IronContacts</h1>
       <button onClick={addContact}>Add Random Contact</button>
       <button onClick={sortPopularity}>Sort by popularity</button>
-      {/* <button onClick={sortName}>Add Random Contact</button> */}
+      {/* <button onClick={sortName}>Sort by name</button> */}
       <table>
         <tr>
           <th>Picture</th>
@@ -43,13 +43,13 @@ function App() {
         </tr>
 
         {contact.map((element) => {
-          let displayPopularity = (element.popularity).toFixed(2)
+          {/* let displayPopularity = (element.popularity).toFixed(2) */}
 
           return (
             <tr>
               <th><img src={element.pictureUrl} alt={element.pictureUrl}/></th>
               <th>{element.name}</th>
-              <th>{displayPopularity}</th>
+              <th>{(element.popularity.toFixed(2))}</th>
             <th>{element.wonOscar ? "🏆" : ""}</th>
             <th>{element.wonEmmy ? "🏆" : ""}</th>
             </tr>
