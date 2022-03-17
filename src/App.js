@@ -4,11 +4,20 @@ import { useState } from "react";
 import contacts from "./contacts.json";
 
 function App() {
-  const [contact] = useState(contacts.splice(0,5));
-  /* const [wonOscar, setWonOscar] = useState(true) */
+  const [contact, setContact] = useState(contacts.splice(0,5));
+  
+  const addContact = () => {
+    const random = contacts[Math.floor(Math.random(contacts.length))];
+
+    setContact(previousContact => {
+    return [random, ...previousContact]
+    });
+  }
+
   return (
     <div className="App">
       <h1>IronContacts</h1>
+      <button onClick={addContact}>Add Random Contact</button>
       <table>
         <tr>
           <th>Picture</th>
