@@ -14,10 +14,25 @@ function App() {
     });
   }
 
+  const sortPopularity = () => {
+    
+    const list = contact.map((item) => item)
+    
+    list.sort((a,b) => {return b.popularity - a.popularity})
+
+    return setContact(list)
+  }
+
+ /*  const sortName = () => {
+
+  } */
+
   return (
     <div className="App">
       <h1>IronContacts</h1>
       <button onClick={addContact}>Add Random Contact</button>
+      <button onClick={sortPopularity}>Sort by popularity</button>
+      {/* <button onClick={sortName}>Add Random Contact</button> */}
       <table>
         <tr>
           <th>Picture</th>
