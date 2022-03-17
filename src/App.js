@@ -5,7 +5,7 @@ import contacts from "./contacts.json";
 
 function App() {
   const [contact] = useState(contacts.splice(0,5));
-
+  /* const [wonOscar, setWonOscar] = useState(true) */
   return (
     <div className="App">
       <h1>IronContacts</h1>
@@ -14,6 +14,8 @@ function App() {
           <th>Picture</th>
           <th>Name</th>
           <th>Popularity</th>
+          <th>Won Oscar</th>
+          <th>Won Emmy</th>
         </tr>
 
         {contact.map((element) => {
@@ -24,6 +26,8 @@ function App() {
               <th><img src={element.pictureUrl} alt={element.pictureUrl}/></th>
               <th>{element.name}</th>
               <th>{displayPopularity}</th>
+            <th>{element.wonOscar ? "🏆" : ""}</th>
+            <th>{element.wonEmmy ? "🏆" : ""}</th>
             </tr>
           );
         })}
