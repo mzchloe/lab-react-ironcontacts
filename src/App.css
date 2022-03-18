@@ -40,3 +40,36 @@
 img {
   height: 100px;
 }
+
+button {
+  margin: 1rem;
+  padding: 1rem;
+  background-color:#FFC900;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor:pointer;
+
+}
+
+table {
+  margin: 20px;
+}
+
+th {
+  border-bottom: 1px solid #086E7D;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  /* background-color: #086E7D; */
+}
+
+.title-header {
+  background-color: #086E7D;
+  color: white;
+  text-transform: uppercase;
+}

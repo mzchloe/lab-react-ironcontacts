@@ -8,12 +8,21 @@ function App() {
   
   const addContact = () => {
     const random = contacts[Math.floor(Math.random(contacts.length))];
+    console.log(random)
 
     setContact(previousContact => {
     return [random, ...previousContact]
     });
   }
 
+
+  const sortName = () => {
+     
+    contact.sort((a,b) => {return a.name - b.name})
+
+    return setContact([...contact])
+  }
+console.log([...contact])
   const sortPopularity = () => {
     
     const list = contact.map((item) => item)
@@ -22,19 +31,18 @@ function App() {
 
     return setContact(list)
   }
-
-  /*  const sortName = () => {
-  
-    } */
+ 
 
   return (
     <div className="App">
       <h1>IronContacts</h1>
+      <div className="buttons">
       <button onClick={addContact}>Add Random Contact</button>
       <button onClick={sortPopularity}>Sort by popularity</button>
-      {/* <button onClick={sortName}>Sort by name</button> */}
+      <button onClick={sortName}>Sort by name</button>
+      </div>
       <table>
-        <tr>
+        <tr className="title-header">
           <th>Picture</th>
           <th>Name</th>
           <th>Popularity</th>
@@ -43,12 +51,10 @@ function App() {
         </tr>
 
         {contact.map((element) => {
-          {/* let displayPopularity = (element.popularity).toFixed(2) */}
-
           return (
             <tr>
               <th><img src={element.pictureUrl} alt={element.pictureUrl}/></th>
-              <th>{element.name}</th>
+              <th>{(element.name)}</th>
               <th>{(element.popularity.toFixed(2))}</th>
             <th>{element.wonOscar ? "🏆" : ""}</th>
             <th>{element.wonEmmy ? "🏆" : ""}</th>
