@@ -44,9 +44,9 @@ img {
 button {
   margin: 1rem;
   padding: 1rem;
-  background-color:#086E7D;
-  border: none;
-  color: white;
+  background-color: white;
+  border: 1px solid #086E7D;
+  color: #086E7D;
   border-radius: 10px;
   text-transform: uppercase;
   font-weight: bold;
@@ -55,9 +55,8 @@ button {
 }
 
 button:hover {
-  background-color: white;
-  color: #086E7D;
-  border: 1px solid #086E7D;
+  background-color:  #086E7D;
+  color: white;
 }
 
 table {
@@ -65,9 +64,15 @@ table {
 }
 
 th {
-  border-bottom: 1px solid #086E7D;
   width: 100px;
 }
+
+
+tr:nth-child(odd) {background: rgb(8, 110, 125, 0.5 )}
+
+tr:nth-child(even) {background: #FFF}
+
+tr:first-child {background: #086E7D}
 
 .App {
   display: flex;
