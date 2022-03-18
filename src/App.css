@@ -44,7 +44,7 @@ img {
 button {
   margin: 1rem;
   padding: 1rem;
-  background-color:#FFC900;
+  background-color:#086E7D;
   border: none;
   color: white;
   border-radius: 10px;
@@ -54,12 +54,19 @@ button {
 
 }
 
+button:hover {
+  background-color: white;
+  color: #086E7D;
+  border: 1px solid #086E7D;
+}
+
 table {
   margin: 20px;
 }
 
 th {
   border-bottom: 1px solid #086E7D;
+  width: 100px;
 }
 
 .App {
@@ -72,4 +79,5 @@ th {
   background-color: #086E7D;
   color: white;
   text-transform: uppercase;
+  height: 40px;
 }
